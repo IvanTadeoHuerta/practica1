@@ -10,13 +10,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 //@Component (decorador) es una funcion que recibe metadata
 var EstudiantesComponent = (function () {
-    //export es para que podamos usar EstudiantesComponent en otros componentes (clases)
     function EstudiantesComponent() {
+        this.titulo = "Lista de estudiantes";
+        this.estudiantes = ['Ivan', 'Luis', 'Ricardo'];
     }
     EstudiantesComponent = __decorate([
         core_1.Component({
             selector: 'estudiante',
-            template: '<h3>Lista de Estudiantes</h3>' //Inserta el template en el selector. Template es el html
+            //Inserta el template en el selector. Template es el html
+            // {{ variable }} se conoce como interpolación y es para que reemplace variable por el texto
+            template: "<h3> {{ titulo }}</h3> \n                <ul>\n                    <li *ngFor=\"let estudiante of estudiantes\">{{ estudiante }}</li>\n                </ul>"
         })
         //export es para que podamos usar EstudiantesComponent en otros componentes (clases)
     ], EstudiantesComponent);
