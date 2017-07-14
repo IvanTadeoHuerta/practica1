@@ -1,0 +1,1 @@
+{"version":3,"file":"estudiantes.component.js","sourceRoot":"","sources":["estudiantes.component.ts"],"names":[],"mappings":";;;;;;;;AAAA,sGAAsG;AACtG,sCAAyC;AAEzC,2DAA2D;AAO3D;IADA,oFAAoF;IACpF;IAAkC,CAAC;IAAtB,oBAAoB;QANhC,gBAAS,CAAC;YACP,QAAQ,EAAE,aAAa;YACvB,QAAQ,EAAE,+BAA+B,CAAC,yDAAyD;SACtG,CAAC;QAEF,oFAAoF;OACvE,oBAAoB,CAAE;IAAD,2BAAC;CAAA,AAAnC,IAAmC;AAAtB,oDAAoB"}
