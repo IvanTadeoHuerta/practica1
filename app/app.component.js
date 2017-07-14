@@ -13,7 +13,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'mi-aplicacion',
-            template: '<h1>Aprende Angular 2 Fácilmente</h1>'
+            template: '<h1>Aprende Angular 2 Fácilmente</h1><estudiante></estudiante>'
         })
     ], AppComponent);
     return AppComponent;

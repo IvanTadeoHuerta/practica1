@@ -15,7 +15,7 @@ var EstudiantesComponent = (function () {
     }
     EstudiantesComponent = __decorate([
         core_1.Component({
-            selector: 'estudiantes',
+            selector: 'estudiante',
             template: '<h3>Lista de Estudiantes</h3>' //Inserta el template en el selector. Template es el html
         })
         //export es para que podamos usar EstudiantesComponent en otros componentes (clases)
