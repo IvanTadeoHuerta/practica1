@@ -9,11 +9,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
+        this.laUniversidad = "Instituto Tecnologico de Toluca";
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'mi-aplicacion',
-            template: '<h1>Aprende Angular 2 Fácilmente</h1><estudiante></estudiante>'
+            template: "<h1>Aprende Angular 2 F\u00E1cilmente</h1>\n                <estudiante [universidad]=\"laUniversidad\"></estudiante>\n              "
         })
     ], AppComponent);
     return AppComponent;

@@ -1,5 +1,5 @@
 //import { Component } from '@angular/core' es una libreria que permite exportar la linea 4 @Component
-import { Component } from '@angular/core'
+import { Component, Input } from '@angular/core'
 
 //@Component (decorador) es una funcion que recibe metadata
 @Component({
@@ -9,7 +9,7 @@ import { Component } from '@angular/core'
     template: `<div [style.margin-left]="300">
                 <h3> {{ titulo }}</h3> 
                 <ul>
-                    <li *ngFor="let estudiante of estudiantes">{{ estudiante }}</li>
+                    <li *ngFor="let estudiante of listaDeEstudiantes()">{{ estudiante }}</li>
                 </ul>
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe3K-rDvbrlmRfdEv0HG7c2O5LhdTEGdfF-TV4mlRh14-LrtS-rg" [class.img-circle]="circle"/>
                 <input type="text" [(ngModel)]="titulo"/>
@@ -20,6 +20,7 @@ import { Component } from '@angular/core'
 
 //export es para que podamos usar EstudiantesComponent en otros componentes (clases)
 export class EstudiantesComponent{
+    @Input() universidad:String;
     titulo = "Lista de estudiantes";
     estudiantes = ['Ivan','Luis','Ricardo'];
     circle = true;
@@ -29,5 +30,13 @@ export class EstudiantesComponent{
     alerta(){
         console.log('Hubo un evento');
         alert('Esta es una alerta');
+    }
+
+    listaDeEstudiantes():Array<string>{
+        if(this.universidad == "Instituto Tecnologico de Toluca"){
+            return ["ejemplo","ejemplo2"]
+        }else{
+            return ["Vacio"]
+        }
     }
 }
