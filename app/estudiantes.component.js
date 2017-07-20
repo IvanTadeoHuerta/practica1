@@ -49,7 +49,7 @@ var EstudiantesComponent = (function () {
             selector: 'estudiante',
             //Inserta el template en el selector. Template es el html
             // {{ variable }} se conoce como interpolación y es para que reemplace variable por el texto
-            template: "<div [style.margin-left]=\"300\">\n                <h3> {{ titulo }}</h3> \n                <ul>\n                    <li *ngFor=\"let estudiante of listaDeEstudiantes()\">\n                        <span (click)=\"clickEnEstudiante($event)\">{{ estudiante }}</span>\n                    </li>\n                </ul>\n                <img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe3K-rDvbrlmRfdEv0HG7c2O5LhdTEGdfF-TV4mlRh14-LrtS-rg\" [class.img-circle]=\"circle\"/>\n                <input type=\"text\" [(ngModel)]=\"titulo\"/>\n                <button (click)=\"alerta()\">Test</button>\n                </div>\n                "
+            templateUrl: 'app/templates/estudiantes.template.html'
         })
         //export es para que podamos usar EstudiantesComponent en otros componentes (clases)
     ], EstudiantesComponent);
