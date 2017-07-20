@@ -11,10 +11,13 @@ var AppComponent = (function () {
     function AppComponent() {
         this.laUniversidad = "Instituto Tecnologico de Toluca";
     }
+    AppComponent.prototype.mostrarEstudiante = function (evento) {
+        console.log(evento.nombre);
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'mi-aplicacion',
-            template: "<h1>Aprende Angular 2 F\u00E1cilmente</h1>\n                <estudiante [universidad]=\"laUniversidad\"></estudiante>\n              "
+            template: "<h1>Aprende Angular 2 F\u00E1cilmente</h1>\n                <estudiante [universidad]=\"laUniversidad\"\n                (seleccionado)=\"mostrarEstudiante($event)\"></estudiante>\n              "
         })
     ], AppComponent);
     return AppComponent;

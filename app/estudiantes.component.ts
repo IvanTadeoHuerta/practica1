@@ -1,5 +1,5 @@
 //import { Component } from '@angular/core' es una libreria que permite exportar la linea 4 @Component
-import { Component, Input } from '@angular/core'
+import { Component, Input, Output, EventEmitter } from '@angular/core'
 
 //@Component (decorador) es una funcion que recibe metadata
 @Component({
@@ -9,7 +9,9 @@ import { Component, Input } from '@angular/core'
     template: `<div [style.margin-left]="300">
                 <h3> {{ titulo }}</h3> 
                 <ul>
-                    <li *ngFor="let estudiante of listaDeEstudiantes()">{{ estudiante }}</li>
+                    <li *ngFor="let estudiante of listaDeEstudiantes()">
+                        <span (click)="clickEnEstudiante($event)">{{ estudiante }}</span>
+                    </li>
                 </ul>
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe3K-rDvbrlmRfdEv0HG7c2O5LhdTEGdfF-TV4mlRh14-LrtS-rg" [class.img-circle]="circle"/>
                 <input type="text" [(ngModel)]="titulo"/>
@@ -21,6 +23,7 @@ import { Component, Input } from '@angular/core'
 //export es para que podamos usar EstudiantesComponent en otros componentes (clases)
 export class EstudiantesComponent{
     @Input() universidad:String;
+    @Output() seleccionado = new EventEmitter();
     titulo = "Lista de estudiantes";
     estudiantes = ['Ivan','Luis','Ricardo'];
     circle = true;
@@ -38,5 +41,9 @@ export class EstudiantesComponent{
         }else{
             return ["Vacio"]
         }
+    }
+
+    clickEnEstudiante(evento:any):void{
+        this.seleccionado.emit({nombre: evento.target.textContent});
     }
 }
