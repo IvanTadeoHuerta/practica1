@@ -1,0 +1,12 @@
+<div [style.margin-left]="300">
+    <h3> {{ titulo }}</h3>
+    <ul>
+        <li *ngFor="let estudiante of listaDeEstudiantes()">
+            <span (click)="clickEnEstudiante($event)">{{ estudiante }}</span>
+        </li>
+    </ul>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe3K-rDvbrlmRfdEv0HG7c2O5LhdTEGdfF-TV4mlRh14-LrtS-rg" [class.img-circle]="circle"
+    />
+    <input type="text" [(ngModel)]="titulo" />
+    <button (click)="alerta()">Test</button>
+</div>
